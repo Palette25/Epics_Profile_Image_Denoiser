@@ -49,7 +49,7 @@ class myDriver(Driver):
 
     def read(self, reason):
         value = self.getParam(reason)
-        # print(f"Read {reason} = {value}")
+        print(f"Read PV: {reason}")
 
         return value
 
@@ -59,7 +59,7 @@ class myDriver(Driver):
             print("ERROR: Array length must be 1440*1080")
             return False
         
-        # print(f"Write {reason} = {value}")
+        print(f"Write PV: {reason}")
         self.setParam(reason, np.array(value, dtype=np.uint8))
 
         return True
@@ -83,7 +83,7 @@ if __name__ == '__main__':
             current_time = time.time()
 
             # 检查是否需要更新 PV
-            if current_time - last_update_time >= 0.2:  # 每隔 n 秒更新一次 # 200ms -- 20Hz
+            if current_time - last_update_time >= 0.1:  # 每隔 n 秒更新一次 # 200ms -- 20Hz
                 image_array = cv2.imread(image_paths[current_image_index], cv2.IMREAD_GRAYSCALE).flatten().astype(np.uint8)
                 driver.setParam('IMAGE', image_array)
                 driver.updatePVs()

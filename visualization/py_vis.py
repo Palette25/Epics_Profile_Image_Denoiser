@@ -242,11 +242,11 @@ if __name__ == '__main__':
     # 添加模型配置信息
     config_data = {
         "模型运行设备": "GPU:0 (CUDA)",
-        "模型路径": "D:\\YOLO11\\YOLOv8\\runs\\segment\\train\\weights\\best.pt",
+        "模型训练框架": "YOLO11",
+        "模型路径": "./src/model/best.pt",
         "图像输入尺寸": "1440 X 1080",
         "清除目标类别": "edges (0), background (1)",
-        "保留目标类别": "lights (2)",
-        "置信度阈值": "0.5"
+        "保留目标类别": "lights (2)"
     }
      # 更新表格内容
     monitor.update_config_table(config_data)
