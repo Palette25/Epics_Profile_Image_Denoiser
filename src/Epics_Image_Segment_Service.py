@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-# 图像去噪主程序
+# 图像去噪服务 -- 主程序
 
 import os
-import cv2
 import time
 import yaml
-import torch
 import epics
 import numpy as np
-import matplotlib.pyplot as plt
 from threading import Thread
 from queue import Queue  # 引入队列
 
@@ -19,12 +15,16 @@ import Image_Processor
 from utils.utils import *
 
 # 读取全局配置参数
-config_file = open('../config/config.yaml')
+config_path = '../config/config.yaml'
+
+config_file = open(config_path)
 config = yaml.safe_load(config_file)
+
 # 从配置文件中读取参数
 IMAGE_PV_NAME = config['PV_CONFIG']['IMAGE_PV_NAME']
 RESULT_PV_NAME = config['PV_CONFIG']['RESULT_PV_NAME']
-IMAGE_SIZE = config['PV_CONFIG']['IMAGE_SIZE']
+IMAGE_WIDTH = config['PV_CONFIG']['IMAGE_WIDTH']
+IMAGE_HEIGHT = config['PV_CONFIG']['IMAGE_HEIGHT']
 YOLO_MODEL_PATH = config['ENVIRON_CONFIG']['YOLO_MODEL_PATH']
 EPICS_CA_MAX_ARRAY_BYTES = config['ENVIRON_CONFIG']['EPICS_CA_MAX_ARRAY_BYTES']
 CUDA_VISIBLE_DEVICES = config['ENVIRON_CONFIG']['CUDA_VISIBLE_DEVICES']
@@ -65,7 +65,7 @@ def process_task_queue():
 
             # 发送处理后的结果到结果 PV
             start_time_3 = time.time()
-            send_result_to_pv(RESULT_PV_NAME, RESULT_PV, processed_image)
+            send_result_to_pv(RESULT_PV_NAME, RESULT_PV, processed_image) 
             print(f"[Info] 处理后的图像已发送到 PV: {RESULT_PV_NAME}")
             # 打印PV写入耗时
             print(f"[Debug] PV写入耗时: {time.time() - start_time_3:.2f}s")
@@ -101,7 +101,7 @@ def on_image_update(pvname=None, value=None, **kwargs):
 # 主函数
 if __name__ == "__main__":
     # 读取图像分割模型
-    model_path = r'./model/best.pt'
+    model_path = YOLO_MODEL_PATH
     image_detector = Image_Processor.ImageProcess(model_path)
 
     print('[Running Device] ' + str(image_detector.model.device))

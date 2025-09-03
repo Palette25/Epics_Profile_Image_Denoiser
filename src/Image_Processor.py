@@ -1,25 +1,26 @@
-import os
 import cv2
-import time
+import yaml
 import torch
 import numpy as np
 
 from ultralytics import YOLO
-from ultralytics.utils import ops
-from ultralytics.nn.tasks import  attempt_load_weights
-
-IMAGE_WIDTH = 1440
-IMAGE_HEIGHT = 1080
 
 class ImageProcess:
     def __init__(self, model_path):
+        # 读取全局配置参数
+        config_path = '../config/config.yaml'
+        config_file = open(config_path)
+        # 定义config对象
+        self.config = yaml.safe_load(config_file)
         # 原始图像尺寸
-        self.INPUT_X = IMAGE_WIDTH
-        self.INPUT_Y = IMAGE_HEIGHT
+        self.INPUT_X = self.config['PV_CONFIG']['IMAGE_WIDTH']
+        self.INPUT_Y = self.config['PV_CONFIG']['IMAGE_HEIGHT']
 
         # YOLO检测模型相关的参数定义
-        self.model = YOLO(model_path).to('cuda')
-        self.INPUT_W, self.INPUT_H = 1088, 1088
+        self.model = YOLO(model_path).to('cuda:0')
+        self.INPUT_W = self.config['PV_CONFIG']['YOLO_IMAGE_WIDTH']
+        self.INPUT_H = self.config['PV_CONFIG']['YOLO_IMAGE_HEIGHT']
+
         self.class_names = ['edges', 'background', 'light']
 
     # 图像前处理

@@ -1,13 +1,5 @@
 # 工具函数合集
-import time
 import epics
-import psutil
-import os
-
-import numpy as np
-
-IMAGE_WIDTH = 1440
-IMAGE_HEIGHT = 1080
 
 # 检测框按比例扩展（与按照固定比例截取不同，而是按照检测框真实比例，等比扩展）
 def expand_bbox(x_min, y_min, x_max, y_max, img_width, img_height):

@@ -1,20 +1,28 @@
 # 软件运行界面
 import sys
+import yaml
 import numpy as np
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QLabel, 
-                             QVBoxLayout, QHBoxLayout, QGroupBox, QStatusBar,
+                             QVBoxLayout, QHBoxLayout, QGroupBox, 
                              QTableWidget, QTableWidgetItem, QSizePolicy)
 from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtGui import QImage, QPixmap, QColor
+from PyQt5.QtGui import QImage, QPixmap
 import epics
 
+
+# 读取全局配置参数
+config_path = '../config/config.yaml'
+
+config_file = open(config_path)
+config = yaml.safe_load(config_file)
+
 # 图像尺寸常量
-IMAGE_WIDTH = 1440
-IMAGE_HEIGHT = 1080
+IMAGE_WIDTH = config['PV_CONFIG']['IMAGE_WIDTH']
+IMAGE_HEIGHT = config['PV_CONFIG']['IMAGE_HEIGHT']
 
 # 定义EPICS PV名称
-PV1_NAME = 'TEST:IMAGE'       # 替换为实际的图像
-PV2_NAME = 'TEST:RES_IMAGE'   # 替换为实际的结果图像
+PV1_NAME = config['PV_CONFIG']['IMAGE_PV_NAME'] # 原始Profile图像
+PV2_NAME = config['PV_CONFIG']['RESULT_PV_NAME'] # 处理后Profile图像
 
 class ImageDisplayWidget(QLabel):
     """用于显示图像的QLabel子类"""
@@ -250,6 +258,8 @@ if __name__ == '__main__':
     }
      # 更新表格内容
     monitor.update_config_table(config_data)
-
     monitor.show()
+
+    # 关闭文件
+    config_file.close()
     sys.exit(app.exec_())
