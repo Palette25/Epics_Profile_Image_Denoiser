@@ -55,11 +55,8 @@ def monitor_image_pv(pv_name, callback):
     
     # 添加回调函数
     image_pv.add_callback(callback)
-    print(f"开始监控 PV: {pv_name}")
 
 def send_result_to_pv(result_pv_name, result_pv, result_image):
     """将处理后的图像和检测结果发送回 EPICS"""
     # 更新 EPICS PV最新值
     result_pv.put(result_image.flatten(), wait=False)
-
-    print(f"[Info] 成功更新PV量: {result_pv_name}")

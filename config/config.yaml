@@ -10,4 +10,8 @@ ENVIRON_CONFIG:
   EPICS_CA_MAX_ARRAY_BYTES: '20971520'
   CUDA_VISIBLE_DEVICES: '0'
   YOLO_MODEL_PATH: './model/best.pt'
-  
+
+LOGGING_CONFIG:
+  LOG_LEVEL: 'INFO'
+  VIS_LOG_FILE: '../logging/visualization.log'
+  SERVICE_LOG_FILE: '../logging/service.log'

@@ -1,18 +1,25 @@
 import os
 import cv2
 import time
+import yaml
 import numpy as np
 
 from pcaspy import SimpleServer, Driver
 
+# 读取全局配置参数
+config_path = '../config/config.yaml'
+
+config_file = open(config_path)
+config = yaml.safe_load(config_file)
+
 # Set environment variables for EPICS
-os.environ['EPICS_CA_MAX_ARRAY_BYTES'] = '20971520'
+os.environ['EPICS_CA_MAX_ARRAY_BYTES'] = config['ENVIRON_CONFIG']['EPICS_CA_MAX_ARRAY_BYTES']
+# 设置图像大小限制
+IMAGE_SIZE = config['PV_CONFIG']['IMAGE_WIDTH'] * config['PV_CONFIG']['IMAGE_HEIGHT']
+RESULT_SIZE = config['PV_CONFIG']['IMAGE_WIDTH'] * config['PV_CONFIG']['IMAGE_HEIGHT']
 
-IMAGE_SIZE = 1080*1440
-RESULT_SIZE = 1080*1440
-
+# 初始化读取图像路径
 image_src_path = r'D:\YOLO11\images\random_UD-BI_PRF7_RAW_ArrayData_YAG_last300.npy_81.png'
-
 image_array = cv2.imread(image_src_path, cv2.IMREAD_GRAYSCALE).flatten().astype(np.uint8)
 
 # 定义轮换图像路径数组
@@ -25,6 +32,7 @@ image_paths = [
 # 当前图像下标
 current_image_index = 0
 
+# 虚拟PV的配置参数
 prefix = 'TEST:'
 pvdb = {
     'IMAGE': {
@@ -43,6 +51,7 @@ pvdb = {
     }
 }
 
+# 自定义驱动类
 class myDriver(Driver):
     def __init__(self):
         super(myDriver, self).__init__()
@@ -71,9 +80,6 @@ if __name__ == '__main__':
 
     driver = myDriver()
 
-    print("===== 模拟Epics PV服务器环境 =====")
-    print("===== 启动成功 =====")
-
     # 定义上次更新的时间
     last_update_time = time.time()
 
@@ -97,4 +103,6 @@ if __name__ == '__main__':
             # 快速处理客户端请求
             server.process(0)  # 保持较小的阻塞时间
     except KeyboardInterrupt:
+        # 关闭文件
+        config_file.close()
         print("--Shutting Down--")

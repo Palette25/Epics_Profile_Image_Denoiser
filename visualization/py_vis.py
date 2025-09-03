@@ -1,13 +1,15 @@
 # 软件运行界面
 import sys
 import yaml
+import epics
+
+import logging
 import numpy as np
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QLabel, 
                              QVBoxLayout, QHBoxLayout, QGroupBox, 
                              QTableWidget, QTableWidgetItem, QSizePolicy)
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QImage, QPixmap
-import epics
 
 
 # 读取全局配置参数
@@ -23,6 +25,16 @@ IMAGE_HEIGHT = config['PV_CONFIG']['IMAGE_HEIGHT']
 # 定义EPICS PV名称
 PV1_NAME = config['PV_CONFIG']['IMAGE_PV_NAME'] # 原始Profile图像
 PV2_NAME = config['PV_CONFIG']['RESULT_PV_NAME'] # 处理后Profile图像
+
+# 设置logging输出对象
+fh = logging.FileHandler(config['LOGGING_CONFIG']['VIS_LOG_FILE'], encoding='utf-8')
+fh.setLevel(logging.INFO)
+fmt = logging.Formatter('%(asctime)s %(message)s')
+fh.setFormatter(fmt)
+# 绑定到 root logger
+root = logging.getLogger()
+root.setLevel(logging.INFO)
+root.addHandler(fh)
 
 class ImageDisplayWidget(QLabel):
     """用于显示图像的QLabel子类"""
@@ -165,9 +177,9 @@ class EpicsImageMonitor(QMainWindow):
                 self.image1_data = np.array(value).reshape((IMAGE_HEIGHT, IMAGE_WIDTH))
                 QTimer.singleShot(0, self.update_displays)  # 切换到主线程更新界面
             else:
-                print(f"PV1数据长度不匹配: 期望 {IMAGE_WIDTH * IMAGE_HEIGHT}, 实际 {len(value) if value is not None else 0}")
+                logging.error(f"PV1数据长度不匹配: 期望 {IMAGE_WIDTH * IMAGE_HEIGHT}, 实际 {len(value) if value is not None else 0}")
         except Exception as e:
-            print(f"处理PV1数据时出错: {e}")
+            logging.error(f"处理PV1数据时出错: {e}")
 
     def on_pv2_update(self, pvname=None, value=None, **kwargs):
         """PV2更新回调函数"""
@@ -181,9 +193,9 @@ class EpicsImageMonitor(QMainWindow):
                 self.image2_data = np.array(value).reshape((IMAGE_HEIGHT, IMAGE_WIDTH))
                 QTimer.singleShot(0, self.update_displays)  # 切换到主线程更新界面
             else:
-                print(f"PV2数据长度不匹配: 期望 {IMAGE_WIDTH * IMAGE_HEIGHT}, 实际 {len(value) if value is not None else 0}")
+                logging.error(f"PV2数据长度不匹配: 期望 {IMAGE_WIDTH * IMAGE_HEIGHT}, 实际 {len(value) if value is not None else 0}")
         except Exception as e:
-            print(f"处理PV2数据时出错: {e}")
+            logging.error(f"处理PV2数据时出错: {e}")
 
     def update_pv1_status(self, connected):
         """更新PV1的连接状态"""
