@@ -6,6 +6,7 @@
 import os
 import cv2
 import time
+import yaml
 import torch
 import epics
 import numpy as np
@@ -17,13 +18,26 @@ from queue import Queue  # 引入队列
 import Image_Processor
 from utils.utils import *
 
+# 读取全局配置参数
+config_file = open('../config/config.yaml')
+config = yaml.safe_load(config_file)
+# 从配置文件中读取参数
+IMAGE_PV_NAME = config['PV_CONFIG']['IMAGE_PV_NAME']
+RESULT_PV_NAME = config['PV_CONFIG']['RESULT_PV_NAME']
+IMAGE_SIZE = config['PV_CONFIG']['IMAGE_SIZE']
+YOLO_MODEL_PATH = config['ENVIRON_CONFIG']['YOLO_MODEL_PATH']
+EPICS_CA_MAX_ARRAY_BYTES = config['ENVIRON_CONFIG']['EPICS_CA_MAX_ARRAY_BYTES']
+CUDA_VISIBLE_DEVICES = config['ENVIRON_CONFIG']['CUDA_VISIBLE_DEVICES']
+
 # 设置环境变量
-os.environ['EPICS_CA_MAX_ARRAY_BYTES'] = '20971520'  # 设置 EPICS 最大数组字节数
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # 指定使用第0号GPU
+# 设置 EPICS 最大数组字节数
+os.environ["EPICS_CA_MAX_ARRAY_BYTES"] = EPICS_CA_MAX_ARRAY_BYTES
+# 指定使用第0号GPU
+os.environ["CUDA_VISIBLE_DEVICES"] = CUDA_VISIBLE_DEVICES 
 
 # 定义 EPICS PV 名称
-IMAGE_PV_NAME = 'TEST:IMAGE'  # 替换为实际的图像 PV 名称
-RESULT_PV_NAME = 'TEST:RES_IMAGE'  # 替换为实际的结果 PV 名称
+IMAGE_PV_NAME = IMAGE_PV_NAME  # 替换为实际的图像 PV 名称
+RESULT_PV_NAME = RESULT_PV_NAME  # 替换为实际的结果 PV 名称
 RESULT_PV = epics.PV(RESULT_PV_NAME) #  结果PV对象
 
 # 创建任务队列
@@ -111,4 +125,6 @@ if __name__ == "__main__":
         # 向队列发送 None，通知线程退出
         task_queue.put(None)
         worker_thread.join()
+        # 关闭文件
+        config_file.close()
         print("===== Shutting Down =====")
