@@ -71,9 +71,15 @@ def process_task_queue():
 
             # 模型推理
             start_time_2 = time.time()
-            processed_image = image_detector.process_image(image_array)
+            processed_image, preprocess_time, inference_time, postprocess_time = image_detector.process_image(image_array)
             # 打印模型推理耗时
             logging.info(f"[Debug] 模型推理耗时: {time.time() - start_time_2:.2f}s")
+            # 打印前处理耗时
+            logging.info(f"[Debug] 前处理耗时: {preprocess_time:.2f}s")
+            # 打印推理耗时
+            logging.info(f"[Debug] 推理耗时: {inference_time:.2f}s")
+            # 打印后处理耗时
+            logging.info(f"[Debug] 后处理耗时: {postprocess_time:.2f}s")
 
             # 发送处理后的结果到结果 PV
             start_time_3 = time.time()

@@ -1,5 +1,6 @@
 import cv2
 import yaml
+import time
 import torch
 import numpy as np
 
@@ -122,13 +123,19 @@ class ImageProcess:
     # 整体去噪+检测流程
     def process_image(self, raw_image):
         # 预处理
+        start_time = time.time()
         raw_image, image = self.preprocess_image(raw_image)
+        preprocess_time = time.time() - start_time
 
         # 模型推理
+        start_time = time.time()
         with torch.no_grad():
             preds = self.model(torch.tensor(image))
+        inference_time = time.time() - start_time
 
         # 后处理
+        start_time = time.time()
         seg_image = self.postprocess_image(raw_image, image, preds)
+        postprocess_time = time.time() - start_time
 
-        return seg_image
+        return seg_image, preprocess_time, inference_time, postprocess_time
