@@ -88,7 +88,7 @@ def process_task_queue():
             # 打印PV写入耗时
             logging.info(f"[Debug] PV写入耗时: {time.time() - start_time_3:.2f}s")
             # 打印整体处理耗时
-            logging.info(f"[Debug] 整体处理耗时: {time.time() - start_time_1:.2f}s")
+            logging.info(f"[Debug] 整体处理耗时: {time.time() - start_time_2:.2f}s")
 
         except Exception as e:
             logging.error(f"[Error] 处理任务时出错: {e}")

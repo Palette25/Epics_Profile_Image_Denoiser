@@ -1,5 +1,7 @@
 # 软件运行界面
+import os
 import sys
+import time
 import yaml
 import epics
 
@@ -10,7 +12,6 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QLabel,
                              QTableWidget, QTableWidgetItem, QSizePolicy)
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QImage, QPixmap
-
 
 # 读取全局配置参数
 config_path = '../config/config.yaml'
