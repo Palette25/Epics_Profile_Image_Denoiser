@@ -10,7 +10,7 @@ class ImageProcess:
     def __init__(self, model_path):
         # 读取全局配置参数
         config_path = '../config/config.yaml'
-        config_file = open(config_path)
+        config_file = open(config_path, 'r', encoding='utf-8')
         # 定义config对象
         self.config = yaml.safe_load(config_file)
         # 原始图像尺寸
@@ -100,7 +100,8 @@ class ImageProcess:
         seg_image = raw_image.copy()
 
         # 定义目标去除类别
-        target_classes = [0, 1]  # 0: edges, 1: background
+        # 2025/10/16 改动：只去除边缘类别，不再去除背景类别
+        target_classes = [0]  # 0: edges, 1: background, 2:light
         orig_h, orig_w = raw_image.shape[:2]
 
         if pred.masks is not None:

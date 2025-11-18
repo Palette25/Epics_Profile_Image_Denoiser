@@ -1,0 +1,375 @@
+# 原始尺寸Profile结果图像
+# INJ段
+record(waveform, "INJ-BI:PRF01:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "INJ-BI:PRFB1:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "INJ-BI:PRF02:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "INJ-BI:PRFB2:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+# COL段
+record(waveform, "COL-BI:PRF01:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF02:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF03:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF04:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF05:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+# DIAG0段
+record(waveform, "DIAG0-BI:PRF01:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF02:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF03:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF04:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF05:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF06:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF07:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF08:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRFB1:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+# DIAG1段
+record(waveform, "DIAG1-BI:PRF01:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF02:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF03:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF04:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF05:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF06:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF07:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRFB1:CCD_SEG_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+
+# 测试用：原始尺寸的原始图像
+# INJ段
+record(waveform, "INJ-BI:PRF01:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "INJ-BI:PRFB1:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "INJ-BI:PRF02:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "INJ-BI:PRFB2:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+# COL段
+record(waveform, "COL-BI:PRF01:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF02:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF03:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF04:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "COL-BI:PRF05:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+# DIAG0段
+record(waveform, "DIAG0-BI:PRF01:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF02:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF03:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF04:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF05:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF06:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF07:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRF08:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG0-BI:PRFB1:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+# DIAG1段
+record(waveform, "DIAG1-BI:PRF01:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF02:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF03:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF04:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF05:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF06:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRF07:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}
+record(waveform, "DIAG1-BI:PRFB1:CCD_IMAGE") {
+    field(DTYP, "Soft Channel")
+    field(FTVL, "LONG")
+    field(NELM, "1310720")
+    field(PINI, "YES")
+    field(PACT, "1")
+}

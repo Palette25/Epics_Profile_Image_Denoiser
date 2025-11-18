@@ -1,2 +1,2 @@
-/logging/service.log
-/logging/visualization.log
+/logging/*.log
+/logging/performance_graphs/*
