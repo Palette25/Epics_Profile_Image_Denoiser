@@ -14,4 +14,4 @@ call conda activate yolo
 
 python MT_Epics_Image_Segment_Service.py
 
-echo ===== 在线服务退出 =====
+echo ====== 在线服务退出 ======

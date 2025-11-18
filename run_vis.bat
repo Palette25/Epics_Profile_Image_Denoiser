@@ -13,4 +13,4 @@ call conda activate yolo
 
 python py_vis.py
 
-echo ===== 可视化软件退出 =====
+echo ====== 可视化软件退出 ======
