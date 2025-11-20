@@ -1,5 +1,8 @@
 # Epics_Profile_Image_Denosier
 
+[![CI](https://github.com/Palette25/Epics_Profile_Image_Denoiser/actions/workflows/ci.yml/badge.svg)](https://github.com/Palette25/Epics_Profile_Image_Denoiser/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Palette25/Epics_Profile_Image_Denoiser/blob/master/LICENSE)
+
 ## 电子束图像分割去噪软件
 
 > Contributers: Palette25
