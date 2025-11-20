@@ -2,8 +2,6 @@
 
 ## 电子束图像分割去噪软件
 
-> Update Dates: 2025/11/18
-
 > Contributers: Palette25
 
 > Institution: IASF, ShenZhen
