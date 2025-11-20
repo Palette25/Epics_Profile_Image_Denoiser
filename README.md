@@ -1,7 +1,9 @@
 # Epics_Profile_Image_Denosier
 
-[![CI](https://github.com/Palette25/Epics_Profile_Image_Denoiser/actions/workflows/ci.yml/badge.svg)](https://github.com/Palette25/Epics_Profile_Image_Denoiser/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Palette25/Epics_Profile_Image_Denoiser/blob/master/LICENSE)
+![Python](https://img.shields.io/badge/python-3.8.20-blue.svg)
+![Pytorch](https://img.shields.io/badge/pytorch-2.4.1-green.svg)
+![CUDA](https://img.shields.io/badge/CUDA-12.4-orange.svg)
 
 ## 电子束图像分割去噪软件
 
@@ -26,7 +28,7 @@
 0. 使用前，首先安装Python+Pytorch运行环境，在`yolo`环境名下把依赖的库都完成安装：
     ```python
     # 创建conda环境
-    conda create -n yolo python=3.12
+    conda create -n yolo python=3.8
     # 安装所需的所有依赖
     pip install -r requirements.txt
     ```
